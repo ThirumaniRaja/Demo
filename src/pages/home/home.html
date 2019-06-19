@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button icon-only menuToggle left class="menu-bttn">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  {{dataList}}
+  <ion-list (click)="onShowData()">
+    <ion-item>
+      Amount:{{amount}}
+    </ion-item>
+    <ion-item>
+      Format:{{format}}
+    </ion-item>
+    <ion-item>
+      Number:{{number}}
+    </ion-item>
+    <ion-item>
+      NumberMax:{{number_max}}
+    </ion-item>
+    <ion-item>
+      TextOut:
+      <div [innerHTML]="text_out">
+      </div>
+    </ion-item>
+    <ion-item>
+      Time:{{time}}
+    </ion-item>
+    <ion-item>
+      Type:{{type}}
+    </ion-item>
+  </ion-list>
+</ion-content>

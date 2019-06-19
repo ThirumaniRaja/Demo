@@ -1,0 +1,25 @@
+<!--
+  Generated template for the ImageViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button icon-only menuToggle left class="menu-bttn">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>imageView</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list padding *ngFor ="let imageList of num">
+      <ion-item>
+          <img src="{{imageList}}"/>
+        </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
