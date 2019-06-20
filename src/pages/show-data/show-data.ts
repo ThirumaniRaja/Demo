@@ -18,6 +18,13 @@ import {Observable} from 'rxjs/Observable';
 export class ShowDataPage {
   public textUrl="https://www.randomtext.me/api/";
    textData :Observable<any>;
+   imageData:Observable<any>;
+  randomNumber='';
+  imageUrl='';
+  num = [];
+  items = [];
+  link ="https://picsum.photos/id/";
+  
    result:any =[];
    slideOpts = {
     effect: 'flip'
@@ -28,6 +35,7 @@ export class ShowDataPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ShowDataPage');
     this.getText();
+    this.getImage();
   }
   public getText(){
     console.log("home page method");
@@ -38,5 +46,16 @@ export class ShowDataPage {
         console.log("myData=",this.result);
       });
 }
+public getImage(){
+  console.log("home page method");
+  var digits = '0123456789'; 
+  for (let i = 0; i < 3; i++ ) { 
+  this.randomNumber += digits[Math.floor(Math.random() * 10)]; 
+  console.log("randomnumber",this.randomNumber);
+  
+}
+this.imageUrl = this.link+this.randomNumber+"/200/200";
+console.log("randomIm",this.imageUrl);
 
+}
 }
